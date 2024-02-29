@@ -4,13 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/**
- * Filter tabs and allow third parties to add their own.
- *
- * Each tab is an array containing title, callback and priority.
- *
- * @see woocommerce_default_product_tabs()
- */
+
+
+
 $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
 ?>
 <?php if ( ! empty( $product_tabs ) ) : ?>
@@ -22,6 +18,8 @@ $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
 	</a>
 	<?php $i++; endforeach;?>
 </div>
+
+
 <div class="tab-content">
 	<?php $i=0; foreach ( $product_tabs as $key => $product_tab ) : ?>
 	<div class="tab-pane fade <?php if(! $i) echo'show active';?> " id="tab-pane-<?php echo esc_attr( $key ); ?>">

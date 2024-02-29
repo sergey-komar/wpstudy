@@ -82,6 +82,7 @@
                 </div>
             </form> -->
         </div>
+        
         <div class="col-lg-4 col-6 text-right">
             <p class="m-0">Customer Service</p>
             <h5 class="m-0">+012 345 6789</h5>
@@ -109,6 +110,8 @@
                     'walker' => new Woostudy_Menu_Categorys()
                 ])
                 ?>
+
+                
                     <!-- <div class="nav-item dropdown dropright">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dresses <i class="fa fa-angle-right float-right mt-1"></i></a>
                         <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
@@ -172,14 +175,15 @@
                         <!-- С помощью этой функции можно сделать мини корзину например в попап окне сам шаблон находится в файле mini-cart -->
 
 
+                        
                         <a href="<?php echo wc_get_cart_url()?>" class="btn px-0 ml-3">
                             <i class="fas fa-shopping-cart text-primary"></i>
-                            <span class="badge text-secondary border border-secondary rounded-circle mini-cart-cnt" style="padding-bottom: 2px;">
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
                             <!-- ТАК ВЫВОДИМ ОБЩИЕ КОЛ-ВО ТОВАРОВ В КОРЗИНЕ -->
-                            <?php //echo WC()->cart->get_cart_contents_count();?>
+                            <?php echo WC()->cart->get_cart_contents_count();?>
 
                             <!--ТАК ВЫВОДИТ КОЛ-ВО ТОВАРОМ ЕСЛИ ДОБАВЛЕНО 2 ТОВАРА ОДНОГО НАЗВАНИЯ ТО ЭТО СЧИТАЕТСЯ КАК ОДИН ТОВАР  -->
-                            <?php echo count(WC()->cart->get_cart())?>
+                            <?php //echo count(WC()->cart->get_cart())?>
                             </span>
                         </a>
                     </div>

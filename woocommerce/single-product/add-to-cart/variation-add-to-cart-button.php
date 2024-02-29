@@ -1,15 +1,5 @@
 <?php
-/**
- * Single variation cart button
- *
- * @see https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
- * @version 7.0.1
- */
-// КНОПКА НА СТРАНИЦЕ ВАРИАТИВНОГО ТОВАРА
-
-
-
+//КНОПКА quantity НА СТРАНИЦЕ ВАРИАТИВНОГО ТОВАРА И КНОПКА ДОБАВИТЬ В КОРЗИНУ
 defined( 'ABSPATH' ) || exit;
 
 global $product;
@@ -28,6 +18,7 @@ global $product;
 						<i class="fa fa-minus"></i>
 					</button>
 				</div><!--input-group-btn-->
+			
 	<?php
 
 	woocommerce_quantity_input(

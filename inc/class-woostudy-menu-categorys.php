@@ -163,6 +163,7 @@ class Woostudy_Menu_Categorys extends Walker_Nav_menu{
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $menu_item->ID, $menu_item, $args, $depth );
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
+		
 
 		// $output .= $indent . '<li' . $id . $class_names . '>';
         //Убираем тег li 
@@ -252,6 +253,7 @@ class Woostudy_Menu_Categorys extends Walker_Nav_menu{
 
 
 
+		
 
 		$item_output  = $args->before;
         //Мой код ставим перед открывающей первой ссылкой div

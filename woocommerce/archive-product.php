@@ -1,4 +1,4 @@
-<?php get_header( 'shop' );?>
+<?php get_header(  );?>
 
   <!-- Breadcrumb Start -->
   <div class="container-fluid">
@@ -25,6 +25,7 @@
 			 */
 			 do_action( 'woocommerce_before_main_content' );
 			 ?>
+
 
 
 			<?php

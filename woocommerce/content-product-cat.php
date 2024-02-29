@@ -1,19 +1,5 @@
 <?php
-/**
- * The template for displaying product category thumbnails within loops
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/content-product-cat.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
- * @version 4.7.0
- */
+
 // КАТЕГОРИИ НА ГЛАВНОЙ СТРАНИЦЕ
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -22,16 +8,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 
+
 <!-- ПЕРВЫМ АГРУМЕНТОМ ПЕРЕДАЁМ СВОИ КЛАССЫ -->
 <div <?php wc_product_cat_class( 'col-lg-3 col-md-4 col-sm-6 pb-1 category-list', $category ); ?>>
-	<?php
-	/**
-	 * The woocommerce_before_subcategory hook.
-	 *
-	 * @hooked woocommerce_template_loop_category_link_open - 10
-	 */
-	do_action( 'woocommerce_before_subcategory', $category );
-	?>
+			<?php
+			/**
+			 * The woocommerce_before_subcategory hook.
+			 *
+			 * @hooked woocommerce_template_loop_category_link_open - 10
+			 */
+			do_action( 'woocommerce_before_subcategory', $category );
+			?>
 	<div class="cat-item d-flex align-items-center mb-4">
 		<div class="overflow-hidden" style="width: 100px; height: 100px;">
 			<?php
@@ -45,6 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 		</div><!-- overflow-hidden  -->
 
+		
 		<div class="flex-fill pl-3">
 			<?php
 			/**
@@ -54,6 +42,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			 */
 			do_action( 'woocommerce_shop_loop_subcategory_title', $category );
 			?>
+			
+			 
 		</div><!-- flex-fill pl-3  -->
 
 			<?php

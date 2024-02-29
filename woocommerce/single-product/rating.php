@@ -1,19 +1,5 @@
 <?php
-/**
- * Single Product Rating
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/single-product/rating.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
- * @version 3.6.0
- */
+
 // ССЫЛКА РЕЙТИНГ ОТЗЫВОВ НА СТРАНИЦЕ ОДНОГО ТОВАРА ВВЕРХУ ГДЕ ПОКАЗЫВАЮТСЯ ЗВЁЗДЫ В СКОБОЧКАХ НАПИСАННО СКОЛЬКО ОТЗЫВОВ. еСЛИ НЕ НАДО ТО УДАЛЯЕМ ЭТО ТО ЕСТЬ УДАЛЯЕМ САМУ ССЫЛКУ ЧТО БЫ НЕ ПЕРЕХОДИЛО УДАЛЯЕМ ТЕГ A <a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( _n( '%s customer review', '%s customer reviews', $review_count, 'woocommerce' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); </a>
 
 

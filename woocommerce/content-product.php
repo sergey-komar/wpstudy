@@ -9,11 +9,13 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 
+
 // Ensure visibility.
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
+
 
 <!-- ПРОВЕРЯЕМ ГЛАВНАЯ ЭТО СТРАНИЦА ИЛИ НЕТ ЕСЛИ НЕТ ТО ДОБАВЛЯЕМ ДРУГИЕ КЛАССЫ -->
 <?php $product_class = is_front_page() ? 'col-lg-3 col-md-4 col-sm-6 pb-1 category-list' : 'col-lg-4 col-md-6 col-sm-6 pb-1'?>
@@ -29,6 +31,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		 */
 		do_action( 'woocommerce_before_shop_loop_item' );
 		?>
+
 
 		<div class="product-img position-relative overflow-hidden">
 			<?php
@@ -77,6 +80,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			 */
 			do_action( 'woocommerce_after_shop_loop_item' );
 			?>
+			
+			 <a href="<?php the_permalink()?>">test</a>
+			 
 		</div><!--text-center py-4 -->
 	</div> <!--product-item bg-light mb-4 -->
 </div> <!-- col-lg-3 col-md-4 col-sm-6 pb-1 -->

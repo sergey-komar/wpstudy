@@ -1,7 +1,7 @@
 <?php
 ?>
    <!-- Footer Start -->
-   <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
+    <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <h5 class="text-secondary text-uppercase mb-4">Get In Touch</h5>
@@ -76,7 +76,105 @@
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
+    <!--// ПРОБУЮ ДОБАВИТЬ КАРТОЧКУ ТОВАРА В МОДАЛЬНОЕ ОКНО ПРИ КЛИКЕ НА ТОВАР  -->
     
+    <?php
+    function pop_up() {
+        ?>
+        <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="content-left">
+                <!-- Leave empty to be able to populate later with ajax -->
+          
+            </div>
+
+        </div>
+
+        </div>
+        <style>
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+        
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        </style>
+        
+        <script>
+        jQuery(document).ready(function($) {
+        var modal = document.getElementById('myModal');
+        var span = document.getElementsByClassName("close")[0];
+        
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        // Let's do the magic
+            // make sure to change #myBtn to read more button selector
+            $(document).on("click","#myBtn",function(e) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            // get url
+                var url = $(this).attr('href');
+                var container = $('#myModal').find('.content-left');
+                var data = {
+                    action: 'show_product',
+                    url: url,
+        
+                };
+                $.post('<?php echo esc_url( home_url() ); ?>/wp-admin/admin-ajax.php', data, function(response) {
+                   // display the response
+                   console.log(response);
+                   $(container).empty();       
+                   $(container).html(response);
+                    modal.style.display = "block";
+                });
+            });
+        });
+        </script>
+        <?php
+        }
+        add_action( 'wp_footer', 'pop_up' );
+        ?>
+ <!--// ПРОБУЮ ДОБАВИТЬ КАРТОЧКУ ТОВАРА В МОДАЛЬНОЕ ОКНО ПРИ КЛИКЕ НА ТОВАР  -->
+
 <?php wp_footer();?>
 </body>
 

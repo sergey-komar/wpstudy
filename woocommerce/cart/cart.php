@@ -1,6 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 ?>
+
 <!-- Breadcrumb Start -->
 <div class="container-fluid">
 	<div class="row px-xl-5">
@@ -38,6 +39,8 @@ defined( 'ABSPATH' ) || exit;
 						<th><?php esc_html_e( 'Remove item', 'woocommerce' ); ?></th>
 					</tr>
 				</thead>
+
+
 				<tbody class="align-middle">
 				<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
@@ -50,6 +53,8 @@ defined( 'ABSPATH' ) || exit;
 				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 					?>
+
+					<!-- У ЭТОГО TR ДОЛЖНЫ БЫТЬ ОБЯЗАТЕЛЬНО ЭТИ КЛАССЫ , ЕСЛИ ИХ НЕТ ВОЗМОЖНО НЕКОРРЕКТНАЯ РАБОТА СТРАНИЦЫ КОРЗИНЫ К ПРИМЕРУ КНОПКА ОБНОВИТЬ КОРЗИНУ БУДЕТ НЕАКТИВНА. КНОПКА ОБНОВИТЬ КОРЗИНУ СТАНОВИТСЯ АКТИВНА КАК ТОЛЬКО МЫ ЧТО ТО МЕНЯЕМ НА СТРАНИЦЕ. НАПРИМЕР КОЛ-ВО ТОВАРОВ -->
 					<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
 					<!-- НАЗВАНИЕ И ИЗОБРАЖЕНИЕ -->
@@ -176,6 +181,8 @@ defined( 'ABSPATH' ) || exit;
 				</tbody>
 			</table>
 
+
+			
 			<!-- КУПОНЫ -->
 			<tr>
 				<td colspan="6" class="actions">

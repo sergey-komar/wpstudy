@@ -14,6 +14,7 @@ global $product;
 	 */
 	do_action( 'woocommerce_before_single_product' );
 	?>
+	
 </div><!-- col-12-->
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'col-12 product-card', $product ); ?>>
 	<div class="row">

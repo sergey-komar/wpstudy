@@ -50,6 +50,7 @@ add_action('wp_enqueue_scripts', 'woostude_scripts');
 
 
 
+
 require_once get_template_directory() . '/inc/woocommerce-hooks.php';
 require_once get_template_directory() . '/inc/class-woostudy-menu-categorys.php';
 require_once get_template_directory() . '/inc/class-woostudy-menu-navbar.php';
@@ -57,6 +58,7 @@ require_once get_template_directory() . '/inc/class-woostudy-menu-navbar.php';
 function debug( $data ) {
 	echo '<pre>' . print_r( $data, 1 ) . '</pre>';
 }
+
 
 
 
@@ -73,3 +75,4 @@ function woostudy_widgets_init() {
 	);
 }
 add_action( 'widgets_init', 'woostudy_widgets_init' );
+
