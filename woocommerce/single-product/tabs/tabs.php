@@ -7,6 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 
+
 $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
 ?>
 <?php if ( ! empty( $product_tabs ) ) : ?>
@@ -18,6 +19,8 @@ $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
 	</a>
 	<?php $i++; endforeach;?>
 </div>
+
+
 
 
 <div class="tab-content">

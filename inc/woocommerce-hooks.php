@@ -125,10 +125,9 @@ add_action( 'wp_ajax_nopriv_show_product', 'show_product_callback_wp' );
 function show_product_callback_wp() {
      $url = $_POST['url'];
      $product_id = url_to_postid( $url );
-
-    // product content
-	$content_post = wc_get_product($product_id);
 	
+    // product content
+	 $content_post = wc_get_product($product_id);
 	$cart_img= get_the_post_thumbnail( $product_id, 'medium');
 
     echo '<test3>';
@@ -137,8 +136,8 @@ function show_product_callback_wp() {
     echo '<test2>' . $cart_img . '</test2>';
 	echo '</test3>';
 
-	echo '<test4>' . 111111  . '</test4>';
-	  debug($content_post);
+	echo '<test4>' . 111111444  . '</test4>';
+
      exit(); 
 }
 

@@ -88,9 +88,10 @@
             <span class="close">&times;</span>
             <div class="content-left">
                 <!-- Leave empty to be able to populate later with ajax -->
-          
+            
             </div>
-
+            
+           
         </div>
 
         </div>
@@ -155,10 +156,11 @@
                 var url = $(this).attr('href');
                 var container = $('#myModal').find('.content-left');
                 var data = {
-                    action: 'show_product',
+                    action: 'show_product', // берётся add_action( 'wp_ajax_nopriv_show_product') можно написать своё что захочешь
                     url: url,
         
                 };
+               
                 $.post('<?php echo esc_url( home_url() ); ?>/wp-admin/admin-ajax.php', data, function(response) {
                    // display the response
                    console.log(response);
